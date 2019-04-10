@@ -3,14 +3,24 @@
 
 var buttons = document.querySelectorAll(".btn");
 
-buttons.forEach(function(){
-	addEventListener("mouseover", function(event) {   
-    // highlight the mouseover target
-    event.target.style.color = "orange";
+buttons.addEventListener("mouseover", function(){
+color=red;
+});
 
-    // reset the color after a short delay
-    setTimeout(function() {
-      event.target.style.color = "";
-    }, 500);
-  }, false);
+
+var splashImage = document.querySelector(".splashIntro");
+var clickState = 0;
+
+splashImage.addEventListener("click", function(){
+
+  if (clickState == 0) {
+    // code snippet 1
+    this.src = 'img/bus2.jpg';
+    clickState = 1;
+  } else {
+    // code snippet 2
+    this.src = 'img/fun-bus.jpg';
+    clickState = 0;
+  }
+
 });
